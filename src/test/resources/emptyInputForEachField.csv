@@ -1,0 +1,6 @@
+card,duemonth,dueyear,holder,cvccvv,warning,message
+,02,24,Name FamilyName,111,Неверный формат
+4444 4444 4444 4441,,24,Name FamilyName,111,Неверный формат
+4444 4444 4444 4441,02,,Name FamilyName,111,Неверный формат
+4444 4444 4444 4441,02,24,,111,Поле обязательно для заполнения
+4444 4444 4444 4441,02,24,Name FamilyName,,Неверный формат
