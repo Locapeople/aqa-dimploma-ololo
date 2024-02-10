@@ -16,7 +16,6 @@ import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-//@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class TripPurchaseTest {
 
     @BeforeEach
@@ -26,7 +25,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №1
-//    @Order(0)
     @ParameterizedTest
     @CsvFileSource(resources = "/validInputPurchaseCard1.csv", numLinesToSkip = 1)
     @DisplayName("(1) Покупка билетов: корректные данные по карте 1 - ожидание сообщения об успехе")
@@ -40,7 +38,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №2
-//    @Order(1)
     @ParameterizedTest
     @CsvFileSource(resources = "/validInputPurchaseCard1.csv", numLinesToSkip = 1)
     @DisplayName("(2) Покупка билетов в кредит: корректные данные по карте 1 - ожидание сообщения об успехе")
@@ -54,7 +51,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №3
-//    @Order(2)
     @ParameterizedTest
     @CsvFileSource(resources = "/validInputPurchaseCard2.csv", numLinesToSkip = 1)
     @DisplayName("(3) Покупка билетов: корректные данные по карте 2 - ожидание сообщения об отказе")
@@ -68,7 +64,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №4
-//    @Order(3)
     @ParameterizedTest
     @CsvFileSource(resources = "/validInputPurchaseCard2.csv", numLinesToSkip = 1)
     @DisplayName("(4) Покупка билетов в кредит: корректные данные по карте 2 - ожидание сообщения об отказе")
@@ -82,7 +77,6 @@ public class TripPurchaseTest {
     }
 
     // Тесты №5-9
-//    @Order(4)
     @ParameterizedTest
     @CsvFileSource(resources = "/emptyInputForEachField.csv", numLinesToSkip = 1)
     @DisplayName("(5-9) Покупка билетов: Отсутствие ввода в каждое поле по очереди - ожидание ошибки под полем")
@@ -96,7 +90,6 @@ public class TripPurchaseTest {
     }
 
     // Тесты №10-14
-//    @Order(4)
     @ParameterizedTest
     @CsvFileSource(resources = "/emptyInputForEachField.csv", numLinesToSkip = 1)
     @DisplayName("(10-14) Покупка билетов в кредит: Отсутствие ввода в каждое поле по очереди - ожидание ошибки под полем")
@@ -110,7 +103,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №15
-//    @Order(5)
     @CsvFileSource(resources = "/unknownCardNumberInput.csv", numLinesToSkip = 1)
     @DisplayName("(15) Покупка билетов: Ввод неизвестного для SUT номера карты - ожидание сообщения об отказе")
     void shouldShowErrorIfUnknownCardNumber_DirectPurchase(String number, String dueMonth, String dueYear, String holder, String CVCCVV) throws SQLException {
@@ -123,7 +115,6 @@ public class TripPurchaseTest {
     }
 
     // Тесты №16-24
-//    @Order(6)
     @ParameterizedTest
     @CsvFileSource(resources = "/invalidInputForEachField.csv", numLinesToSkip = 1)
     @DisplayName("(15-24) Покупка билетов: Ввод некорректных данных в каждое поле по очереди - ожидание ошибки под полем")
@@ -137,7 +128,6 @@ public class TripPurchaseTest {
     }
 
     // Тест №25
-//    @Order(5)
     @CsvFileSource(resources = "/unknownCardNumberInput.csv", numLinesToSkip = 1)
     @DisplayName("(25) Покупка билетов в кредит: Ввод неизвестного для SUT номера карты - ожидание сообщения об отказе")
     void shouldShowErrorIfUnknownCardNumber_Credit(String number, String dueMonth, String dueYear, String holder, String CVCCVV) throws SQLException {
@@ -150,7 +140,6 @@ public class TripPurchaseTest {
     }
 
     // Тесты №26-34
-//    @Order(7)
     @ParameterizedTest
     @CsvFileSource(resources = "/invalidInputForEachField.csv", numLinesToSkip = 1)
     @DisplayName("(25-34) Покупка билетов в кредит: Ввод некорректных данных в каждое поле по очереди - ожидание ошибки под полем")
