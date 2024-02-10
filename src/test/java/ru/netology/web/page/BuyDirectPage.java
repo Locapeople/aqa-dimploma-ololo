@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class BuyDirectPage extends PurchasePageBase {
 
-    private static final SelenideElement pageHeader = $$("h3").find(text("Кредит по данным карты"));
+    private static final SelenideElement pageHeader = $$("h3").find(text("Оплата по карте"));
 
     public BuyDirectPage() {
         super();
