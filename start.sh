@@ -17,6 +17,8 @@ case "$DBTYPE" in
     ;;
 esac
 
+[[ -f "app.pid" ]] && { echo "Cannot start SUT: already running"; exit -1; }
+
 docker-compose up --build -d &> services.log
 java -D${DBENV} -jar aqa-shop.jar &> app.log &
 echo $! > app.pid
