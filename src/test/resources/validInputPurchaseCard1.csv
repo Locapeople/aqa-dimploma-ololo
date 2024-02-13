@@ -1,2 +1,2 @@
-card,duemonth,dueyear,holder,cvccvv,warning,message
-4444 4444 4444 4441,02,24,Name FamilyName,111,Операция одобрена Банком
+card,duemonthoffset,dueyearoffset,holder,cvccvv,warning,message
+4444 4444 4444 4441,0,0,Name FamilyName,111,Операция одобрена Банком
