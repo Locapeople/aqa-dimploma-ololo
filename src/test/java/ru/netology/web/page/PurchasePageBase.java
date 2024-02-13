@@ -14,55 +14,55 @@ import static com.codeborne.selenide.Selenide.$$;
 // Базовый класс для страницы обоих вариантов оплаты
 public class PurchasePageBase {
 
-    private static final SelenideElement field_cardNumber =
+    private static final SelenideElement FIELD_CARD_NUMBER =
             $(byText("Номер карты")).parent().$(".input__control");
-    private static final SelenideElement field_dueMonth =
+    private static final SelenideElement FIELD_DUE_MONTH =
             $(byText("Месяц")).parent().$(".input__control");
-    private static final SelenideElement field_dueYear =
+    private static final SelenideElement FIELD_DUE_YEAR =
             $(byText("Год")).parent().$(".input__control");
-    private static final SelenideElement field_holder =
+    private static final SelenideElement FIELD_HOLDER =
             $(byText("Владелец")).parent().$(".input__control");
-    private static final SelenideElement field_CVCCVV =
+    private static final SelenideElement FIELD_CVCCVV =
             $(byText("CVC/CVV")).parent().$(".input__control");
-    private static final SelenideElement button_continue =
+    private static final SelenideElement BUTTON_CONTINUE =
             $$("button").find(exactText("Продолжить"));
-    private static final SelenideElement notification_OKStatus =
+    private static final SelenideElement NOTIFICATION_OK_STATUS =
             $(".notification_status_ok");
-    private static final SelenideElement notification_ErrorStatus =
+    private static final SelenideElement NOTIFICATION_ERROR_STATUS =
             $(".notification_status_error");
-    private static final SelenideElement text_invalidFormat = $(".input__sub");
+    private static final SelenideElement TEXT_INVALID_FORMAT = $(".input__sub");
 
     public PurchasePageBase() {
-        field_cardNumber.shouldBe(visible);
-        field_dueMonth.shouldBe(visible);
-        field_dueYear.shouldBe(visible);
-        field_holder.shouldBe(visible);
-        field_CVCCVV.shouldBe(visible);
-        button_continue.shouldBe(visible);
-        notification_OKStatus.shouldBe(hidden);
-        notification_ErrorStatus.shouldBe(hidden);
-        text_invalidFormat.shouldBe(hidden);
+        FIELD_CARD_NUMBER.shouldBe(visible);
+        FIELD_DUE_MONTH.shouldBe(visible);
+        FIELD_DUE_YEAR.shouldBe(visible);
+        FIELD_HOLDER.shouldBe(visible);
+        FIELD_CVCCVV.shouldBe(visible);
+        BUTTON_CONTINUE.shouldBe(visible);
+        NOTIFICATION_OK_STATUS.shouldBe(hidden);
+        NOTIFICATION_ERROR_STATUS.shouldBe(hidden);
+        TEXT_INVALID_FORMAT.shouldBe(hidden);
     }
 
     // TODO: исправить имена и логику
     public void enterCardData(PaymentCard card) {
-        field_cardNumber.setValue(card.getCardNumber());
-        field_dueMonth.setValue(card.getDueMonth());
-        field_dueYear.setValue(card.getDueYear());
-        field_holder.setValue(card.getHolder());
-        field_CVCCVV.setValue(card.getCVCCVV());
-        button_continue.click();
+        FIELD_CARD_NUMBER.setValue(card.getCardNumber());
+        FIELD_DUE_MONTH.setValue(card.getDueMonth());
+        FIELD_DUE_YEAR.setValue(card.getDueYear());
+        FIELD_HOLDER.setValue(card.getHolder());
+        FIELD_CVCCVV.setValue(card.getCVCCVV());
+        BUTTON_CONTINUE.click();
     }
 
     public void isOKStatus() {
-        notification_OKStatus.shouldBe(visible, Duration.ofSeconds(15));
+        NOTIFICATION_OK_STATUS.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public void isErrorStatus() {
-        notification_ErrorStatus.shouldBe(visible, Duration.ofSeconds(15));
+        NOTIFICATION_ERROR_STATUS.shouldBe(visible, Duration.ofSeconds(15));
     }
 
     public boolean isInputInvalid() {
-        return text_invalidFormat.isDisplayed();
+        return TEXT_INVALID_FORMAT.isDisplayed();
     }
 }
