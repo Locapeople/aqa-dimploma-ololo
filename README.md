@@ -8,8 +8,9 @@
 
 1. Клонировать проект, используя `git clone https://github.com/Locapeople/aqa-dimploma-ololo.git`
 2. Установить зависимости:
-   - Docker и утилита `docker compose` (устанавливается отдельно)
-   - Node.js
+   - [Java](https://www.java.com/en/download/)
+   - [Node.js](https://nodejs.org/en/download/)
+   - [Docker](https://www.docker.com/products/docker-desktop/) и утилита `docker compose` (устанавливается отдельно)
 
 ## Запуск проекта
 
