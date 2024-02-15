@@ -18,7 +18,7 @@ public class TripPurchaseDirectTest {
     public static final String SUT_URL = System.getProperty("sut.url");
 
     @BeforeEach
-    public void openPage() {
+    public void openPageAndClearTables() {
         open(SUT_URL);
         DataHelper.DBHelper.clear();
     }
